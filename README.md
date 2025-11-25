@@ -105,7 +105,7 @@ firewall-cmd --permanent --direct --add-rule ipv4 filter OUTPUT 999 -j DROP
 ```
 
 ### 4. Setup Cron Job 
-Since Red Hat and MongoDB use CDNs (Akamai/Fastly), their IPs change frequently. You must update the whitelist daily.
+Since Red Hat and MongoDB use CDNs (Akamai/Fastly), their IPs change frequently. You must update the whitelist daily. NOTE: Recommended to run before an update as well due to the changing IPs.
 ```bash
 # Add to root crontab (crontab -e)
 0 4 * * * /usr/local/bin/whitelistfirewall.sh >/dev/null 2>&1
