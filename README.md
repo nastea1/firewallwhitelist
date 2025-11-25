@@ -119,11 +119,11 @@ firewall-cmd --direct --get-all-rules
 Ensure priority 999 -j DROP is present.
 ### Test Blocked Traffic (Should Fail/Timeout):
 ```bash
-curl -v [https://www.google.com](https://www.google.com)
+curl -v https://www.google.com
 # Output: Connection timed out (or hanging)
 ```
 ## Test Allowed Traffic (Should Succeed):
 ```bash
-curl -I [https://cdn.redhat.com](https://cdn.redhat.com)
+curl -I https://cdn.redhat.com
 # Output: HTTP/1.1 200 OK
 ```
